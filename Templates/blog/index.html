@@ -5,6 +5,11 @@
     <title>blog</title>
 </head>
 <body>
-
+    <a href="{% url 'blog:edit' 0 %}">新文章</a>
+    <br/>
+    {% for article in articles %}
+        <a href="{% url 'blog:article_page' article.id %}">{{ article.title }}</a>
+        <br/>
+    {% endfor %}
 </body>
 </html>
